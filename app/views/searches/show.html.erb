@@ -1,0 +1,32 @@
+
+
+
+
+<h1>Search Results</h1>
+
+
+
+<% if @search.search_users.empty? %>
+
+    <p>No Records found</p>
+
+    <% else %>
+
+        <% @search.search_users.each do |u| %>
+
+            <div>
+                <h3> <%= u.name %> </h3>
+                <p>Email: <%= u.email %> </p>
+                <p>Title: <%= u.title %> </p>
+                <p>Phone: <%= u.phone %> </p>
+                <p>Status: <%= u.status %> </p>
+
+
+            </div>
+
+        <% end %>
+
+<%end%>
+
+<p><%= link_to 'Back', new_search_path %></p>
+
