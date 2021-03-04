@@ -18,3 +18,15 @@ require("jquery")
 // const imagePath = (name) => images(name, true)
 import "bootstrap"
 
+
+$(document)(function(){
+    $('.destroy').on('click', function(){
+        $.ajax({
+            url: '/users/' + this.parentElement.id,
+            type: 'DELETE',
+            success: function(r){
+                
+            }
+        })
+    })
+})

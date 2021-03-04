@@ -18,3 +18,11 @@ require("jquery")
 // const imagePath = (name) => images(name, true)
 import "bootstrap"
 
+
+$(document).ready(function(){
+    $('.destroy').on('click', function(){
+        $.ajax({
+            
+        })
+    })
+})

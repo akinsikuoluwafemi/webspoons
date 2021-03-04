@@ -68,7 +68,7 @@
         <%end%>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
 
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'delete' %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?', remote }</td> %>
       </tr>
     <% end %>
   </tbody>
@@ -95,7 +95,7 @@
 
 
 
-  <%= link_to 'New User',  new_user_path %>
+<%= link_to 'New User',  new_user_path %>
 
   
 
