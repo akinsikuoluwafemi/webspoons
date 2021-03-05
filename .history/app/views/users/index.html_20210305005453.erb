@@ -12,7 +12,7 @@
   </div>
 
 
-<table id="users" class="container" >
+<table class="container" >
   <thead>
     <tr>
       <th>
@@ -48,11 +48,33 @@
 
 
   <tbody >
-      <%= render  @users %>
+    <% @users.each do |user| %>
+      <tr id="<%= user.id %>">
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.title %></td>
+        <td><%= user.phone %></td>
+        <% if user.status === false %>
+
+            <td>
+                <p class="text-danger">inactive</p>
+            </td>
+
+          <% elsif user.status === true%>
+             <td>
+                <p class="text-success">active</p>
+            </td>
+
+        <%end%>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class: 'delete' %></td>
+      </tr>
+    <% end %>
   </tbody>
 
 
-</table>  
+</table>
 
    <div class="digg_pagination mt-5">
     <div class="page_info">
@@ -73,16 +95,15 @@
 
   <div class="container">
 
-      <div id="new-user">
-
-        <%= link_to 'New User',  new_user_path, remote: true %>
-
-
-    </div>
 
   </div>
 
+  <div id="new-user">
 
+      <%= link_to 'New User',  new_user_path, remote: true %>
+
+
+  </div>
 
 
   

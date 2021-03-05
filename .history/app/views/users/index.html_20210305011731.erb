@@ -48,11 +48,13 @@
 
 
   <tbody >
-      <%= render  @users %>
+    <% @users.each do |user| %>
+      <%= render partial: 'user', collection %>
+    <% end %>
   </tbody>
 
 
-</table>  
+</table>
 
    <div class="digg_pagination mt-5">
     <div class="page_info">
